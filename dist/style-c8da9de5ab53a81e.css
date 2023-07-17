@@ -1,0 +1,143 @@
+html {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#scrimer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  padding: 50px;
+  background-color: black;
+  color: white;
+}
+
+input {
+  min-width: 4ch;
+  width: 4ch;
+  font-family: monospace;
+  margin: auto;
+}
+
+.calculator {
+  display: flex;
+  justify-content: space-around;
+  height: 60vh;
+}
+.calculator .source,
+.calculator .target {
+  box-shadow: 5px 5px 10px gray;
+  padding: 10px;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  border-radius: 10px;
+}
+.calculator .source table,
+.calculator .target table {
+  margin: auto;
+}
+.calculator .source::before,
+.calculator .target::before {
+  display: block;
+  font-size: 1.5rem;
+  width: 100%;
+  border-bottom: 4px double white;
+  margin-bottom: 5px;
+}
+.calculator .source input {
+  /* Firefox */
+  background-color: gray;
+  border: 1px solid aquamarine;
+}
+.calculator .source input::-webkit-outer-spin-button, .calculator .source input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calculator .source input[type=number] {
+  -moz-appearance: textfield;
+}
+.calculator .source::before {
+  content: "Source";
+}
+.calculator .target::before {
+  content: "Target";
+}
+
+.toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 20vh;
+  background-color: rgb(36, 35, 35);
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.toolbar section {
+  border: 4px solid white;
+  border-radius: 10px;
+  height: fit-content;
+  padding: 10px;
+  text-align: center;
+}
+.toolbar section span {
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.toolbar button.action {
+  background-color: transparent;
+  color: white;
+  height: fit-content;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 10px;
+  font-size: 2rem;
+  transition: background-color ease-in 0.2s, color ease-in 0.2s;
+}
+.toolbar button.action:hover {
+  background-color: aquamarine;
+  color: black;
+}
+.toolbar .counters {
+  display: flex;
+  width: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.counter .decrement,
+.counter .increment {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(195, 195, 255);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.counter .decrement::before {
+  content: "-";
+}
+.counter .increment::before {
+  content: "+";
+}
+
+table {
+  text-align: center;
+}
